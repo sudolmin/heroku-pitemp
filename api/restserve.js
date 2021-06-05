@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const MAXIMUM_ENTRIES = 100;
 
 // Server port
-var HTTP_PORT = 80;
+var HTTP_PORT = process.env.PORT || 3000;
 app.set('domain', '{rest_api_ip}')
 // Start server
 app.listen(HTTP_PORT, () => {
