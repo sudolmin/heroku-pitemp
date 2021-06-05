@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const MAXIMUM_ENTRIES = 100;
 
 // Server port
-var HTTP_PORT = process.env.PORT || 3000;
+var HTTP_PORT = 80;
 app.set('domain', '{rest_api_ip}')
 // Start server
 app.listen(HTTP_PORT, () => {
@@ -21,6 +21,11 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
+});
+
+app.get("/", function(req, res) {
+  //when we get an http get request to the root/homepage
+  res.send("Hello World");
 });
 
 app.get("/api/temp", (req, res, next) => {
