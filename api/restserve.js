@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const MAXIMUM_ENTRIES = 100;
+const MAXIMUM_ENTRIES = 20;
 
 // Server port
 var HTTP_PORT = process.env.PORT || 3000;
